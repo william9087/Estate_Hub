@@ -1,0 +1,9 @@
+#home_bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 650px; /* Set height to 400px */
+  width: 1200px; /* Set width to 520px */
+  z-index: -3;
+}
