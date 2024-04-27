@@ -47,6 +47,16 @@
             </div>
 
             <div class="form-group">
+              <input type="radio" id="seller" name="user_type" value="Seller">
+              <label for="seller">Seller</label><br>
+              <input type="radio" id="buyer" name="user_type" value="Buyer">
+              <label for="buyer">Buyer</label><br>
+              <input type="radio" id="admin" name="user_type" value="Admin">
+              <label for="admin">Admin</label><br>
+              <span class="error-message" id="user_typeError"></span><br>  
+            </div>
+
+            <div class="form-group">
                 <button type="submit">Sign Up</button>
             </div>
         </form>
@@ -100,9 +110,26 @@
                 isValid = false;
             }
 
+            const radios = document.getElementsByName('user_type');
+            let count = 0;
+            for (let i = 0; i < radios.length; i++){
+                if (!radios[i].checked) {
+                    count += 1;
+                }
+            }
+
+            if (count === radios.length){
+                document.getElementById('user_typeError').textContent = 'Please select user type';
+                isValid = false;
+            } else {
+                // If at least one radio button is checked, clear the error message
+                document.getElementById('user_typeError').textContent = '';
+            }
+
             if (!isValid) {
                 event.preventDefault(); // Prevent form submission if validation fails
             }
+
         });
     </script>
 

@@ -22,16 +22,17 @@ $lastName = $_POST['lastName'];
 $email = $_POST['email'];
 $username = $_POST['username'];
 $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+$user_type = $_POST['user_type'];
 
 // SQL query to insert data into the database
-$sql = "INSERT INTO user_info (first_name, last_name, email, user_name, password) VALUES (?, ?, ?, ?, ?)";
+$sql = "INSERT INTO user_info (first_name, last_name, email, user_name, password, user_type) VALUES (?, ?, ?, ?, ?, ?)";
 
 // Prepare the SQL statement
 $stmt = $conn->prepare($sql);
 echo "1\n";
 
 // Bind parameters and execute the statement
-$stmt->bind_param("sssss", $firstName, $lastName, $email, $username, $password);
+$stmt->bind_param("sssss", $firstName, $lastName, $email, $username, $password, $user_type);
 
 try {
     if ($stmt->execute()) {

@@ -16,7 +16,7 @@ h2 {
 }
 
 .form-group label {
-  display: block;
+  display: inline-block;
   margin-bottom: 5px;
 }
 
@@ -29,6 +29,12 @@ h2 {
   border: 1px solid #ccc;
   font-size: 17px;
   font-family: "Times New Roman", Times, serif;
+}
+
+.form-group input[type="radio"],
+.form-group label {
+  display: inline-block;
+  vertical-align: middle; /* optional: align the elements vertically */
 }
 
 .form-group .error-message {
