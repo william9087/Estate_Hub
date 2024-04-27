@@ -7,6 +7,15 @@
 </head>
 
 <body>
+    <h1 id="name">Estate Hub</h1>
+    <div id="container">
+        <a href="home.html" class="nav-item">Home</a>
+        <a href="#about" class="nav-item">About</a>
+        <a href="#services" class="nav-item">Services</a>
+        <a href="#contact" class="nav-item">Contact</a>
+        <a href="#" class="nav-item">Sign-In</a>
+        <a href="registeration.php" class="nav-item">Register</a>
+    </div>
     <div class="container">
         <h2>User Signup</h2>
         <form id="signupForm" action="register.php" method="post">
