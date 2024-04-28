@@ -10,10 +10,10 @@
     <h1 id="name">Estate Hub</h1>
     <div id="container">
         <a href="home.html" class="nav-item">Home</a>
-        <a href="#about" class="nav-item">About</a>
-        <a href="#services" class="nav-item">Services</a>
-        <a href="#contact" class="nav-item">Contact</a>
-        <a href="#" class="nav-item">Sign-In</a>
+        <a href="home.html#about" class="nav-item">About</a>
+        <a href="home.html#services" class="nav-item">Services</a>
+        <a href="home.html#contact" class="nav-item">Contact</a>
+        <a href="login_page.php" class="nav-item">Log-In</a>
         <a href="registeration.php" class="nav-item">Register</a>
     </div>
     <div class="container">
@@ -55,14 +55,15 @@
                 <span class="error-message" id="passwordError"></span>
             </div>
 
+            <!-- User Type -->
             <div class="form-group">
-              <input type="radio" id="seller" name="user_type" value="Seller">
-              <label for="seller">Seller</label><br>
-              <input type="radio" id="buyer" name="user_type" value="Buyer">
-              <label for="buyer">Buyer</label><br>
-              <input type="radio" id="admin" name="user_type" value="Admin">
-              <label for="admin">Admin</label><br>
-              <span class="error-message" id="user_typeError"></span><br>  
+                  <input type="radio" id="seller" name="user_type" value="Seller">
+                  <label for="seller">Seller</label><br>
+                  <input type="radio" id="buyer" name="user_type" value="Buyer">
+                  <label for="buyer">Buyer</label><br>
+                  <input type="radio" id="admin" name="user_type" value="Admin">
+                  <label for="admin">Admin</label><br>
+                <span class="error-message" id="user_typeError"></span><br>
             </div>
 
             <div class="form-group">
@@ -121,13 +122,13 @@
 
             const radios = document.getElementsByName('user_type');
             let count = 0;
-            for (let i = 0; i < radios.length; i++){
+            for (let i = 0; i < radios.length; i++) {
                 if (!radios[i].checked) {
                     count += 1;
                 }
             }
 
-            if (count === radios.length){
+            if (count === radios.length) {
                 document.getElementById('user_typeError').textContent = 'Please select user type';
                 isValid = false;
             } else {

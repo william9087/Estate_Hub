@@ -90,6 +90,8 @@ h1 {
 footer {
   text-align: center;
   font-style: italic;
+  margin-top: 600px;
+  font-size: 16px;
 }
 
 #about_detail {

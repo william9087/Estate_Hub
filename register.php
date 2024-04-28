@@ -32,19 +32,27 @@ $stmt = $conn->prepare($sql);
 echo "1\n";
 
 // Bind parameters and execute the statement
-$stmt->bind_param("sssss", $firstName, $lastName, $email, $username, $password, $user_type);
+$stmt->bind_param("ssssss", $firstName, $lastName, $email, $username, $password, $user_type);
+
+echo "1232";
 
 try {
     if ($stmt->execute()) {
+        echo "1232";
         echo "User registered successfully\n";
     } else {
+        echo "12311112";
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
 } catch (Exception $e) {
+    echo "444";
     echo $e->getMessage();
 }
 
+echo "1321232";
 
 // Close the statement and connection
 $stmt->close();
 $conn->close();
+
+header('Location: home.html');

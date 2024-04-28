@@ -5,6 +5,7 @@
   border: 5px solid #1a4663;
   border-radius: 5px;
   margin-top: 50px;
+  background-color: rgb(18, 22, 37, 0.5);
 }
 
 h2 {
@@ -74,4 +75,6 @@ h2 {
 
 body {
   background: #97b4d6;
+  background: url(img/account_pic.jpg);
+  color: white;
 }
