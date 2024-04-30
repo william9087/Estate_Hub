@@ -28,7 +28,7 @@
 .nav-item {
   padding: 10px 15px;
   cursor: pointer;
-  text-decoration: none; /* Removes the underline from the links */
+  text-decoration: none;
   color: #b49f9f;
 }
 
@@ -53,8 +53,8 @@ h1 {
 }
 
 #about_img {
-  width: 700px; /* Set width for the image */
-  height: auto; /* Maintain aspect ratio */
+  width: 700px;
+  height: auto;
   margin-right: 10px;
 }
 
@@ -67,7 +67,7 @@ h1 {
 }
 
 #services_img {
-  width: 724px; /* Set width for the image */
+  width: 724px;
   height: 422px;
   margin-left: 570px;
 }
@@ -82,8 +82,8 @@ h1 {
 }
 
 #contact_img {
-  width: 700px; /* Set width for the image */
-  height: auto; /* Maintain aspect ratio */
+  width: 700px;
+  height: auto; 
   margin-right: 10px;
 }
 

@@ -1,0 +1,130 @@
+#home_bg {
+  position: absolute;
+  top: 41%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 680px;
+  width: 1450px;
+  z-index: -3;
+}
+
+#name {
+  color: #b49f9f;
+  background-color: rgba(44, 15, 15, 0.7);
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 15px;
+}
+
+#container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-left: 20px;
+  margin-right: 30px;
+  margin-top: -80px;
+  font-size: large;
+}
+
+.nav-item {
+  padding: 10px 15px;
+  cursor: pointer;
+  text-decoration: none;
+  color: #b49f9f;
+  transition: background-color 0.3s ease;
+}
+
+.nav-item:hover {
+  background-color: rgb(60, 60, 89, 0.7);
+}
+
+h1 {
+  margin-left: 10px;
+  color: #b1b4ce;
+}
+
+body {
+  min-width: 640px;
+  background-color: #b1b4ce;
+}
+
+#contact {
+  background-color: rgb(83, 43, 43);
+  position: absolute;
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 80px;
+  width: 100%;
+  padding: 20px;
+}
+
+#contact_img {
+  width: 50%;
+  height: auto;
+  margin-right: 20px;
+}
+
+#contact_detail {
+  font-size: 24px;
+  color: rgb(189, 189, 200);
+  margin-top: 10%;
+  width: 500px;
+  right: 7%;
+}
+
+.property_button_container {
+  text-align: center; /* Center the button horizontally */
+  margin-top: 20px; /* Adjust margin top as needed */
+}
+
+#propertyButton {
+  background-color: #e3c0ab;
+  border: none;
+  color: #000000;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-bottom: 1px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+  font-size: 34px;
+  line-height: 24px;
+}
+
+#propertyButton:hover {
+  background-color: rgb(147, 88, 88);
+}
+
+.property_button_container p {
+  color: #555;
+  font-size: 20px;
+  font-style: italic;
+}
+
+footer {
+  text-align: center;
+  font-style: italic;
+  margin-top: 600px;
+  font-size: 16px;
+}
+
+#propertyCards {
+  width: 80%; /* Adjust width as needed */
+  margin: 0 auto; /* Center horizontally */
+  text-align: center;
+  margin-top: 10px;
+}
+
+.property-block {
+  border: 2px solid rgb(17, 17, 42); /* Add border */
+  padding: 10px; /* Add padding */
+  margin-bottom: 20px; /* Add some space between property blocks */
+}
+
+.nav-item {
+  color: rgb(13, 13, 31);
+  font-size: large;
+}

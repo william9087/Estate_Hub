@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Seller Dashboard</title>
+    <link href="seller.css" type="text/css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <h1 id="name">Estate Hub</h1>
+    <div id="container">
+      <a href="home.html" class="nav-item">Home</a>
+      <a href="home.html#about" class="nav-item">About</a>
+      <a href="home.html#services" class="nav-item">Services</a>
+      <a href="home.html#contact" class="nav-item">Contact</a>
+    </div>
+
+    <div class="property_button_container">
+      <!-- Link to add property page -->
+      <a href="addproperty.html" class="nav-item">Add Property</a>
+    </div>
+
+    <!-- Property Cards Section -->
+    <div id="propertyCards"></div>
+
+    <footer>
+      <p>© 2024 Estate Hub. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+      // JavaScript code to display property cards
+      window.onload = function () {
+        // Retrieve saved properties from localStorage if available
+        var savedProperties =
+          JSON.parse(localStorage.getItem("properties")) || [];
+
+        // Display each saved property as a card
+        savedProperties.forEach(function (property, index) {
+          var propertyBlock = document.createElement("div");
+          propertyBlock.classList.add("property-block");
+          propertyBlock.innerHTML = `
+                    <div class="property-info">
+                        <p><strong>Location:</strong> ${property.location}</p>
+                        <p><strong>Price:</strong> ${property.price}</p>
+                        <p><strong>Rooms:</strong> ${property.rooms}</p>
+                        <p><strong>Floors:</strong> ${property.floors}</p>
+                        <p><strong>State:</strong> ${property.state}</p>
+                    </div>
+                    <button class="delete-button" data-index="${index}">Delete</button>
+                `;
+          document.getElementById("propertyCards").appendChild(propertyBlock);
+        });
+
+        // Add event listener to delete buttons
+        var deleteButtons = document.querySelectorAll(".delete-button");
+        deleteButtons.forEach(function (button) {
+          button.addEventListener("click", function () {
+            var index = parseInt(button.dataset.index);
+            deleteProperty(index);
+            refreshPropertyCards();
+          });
+        });
+      };
+
+      // Function to delete property from localStorage
+      function deleteProperty(index) {
+        var properties = JSON.parse(localStorage.getItem("properties")) || [];
+        properties.splice(index, 1);
+        localStorage.setItem("properties", JSON.stringify(properties));
+      }
+
+      // Function to refresh property cards on the page
+      function refreshPropertyCards() {
+        var propertyCardsContainer = document.getElementById("propertyCards");
+        propertyCardsContainer.innerHTML = ""; // Clear existing property cards
+        // Retrieve saved properties from localStorage and display them again
+        var savedProperties =
+          JSON.parse(localStorage.getItem("properties")) || [];
+        savedProperties.forEach(function (property, index) {
+          var propertyBlock = document.createElement("div");
+          propertyBlock.classList.add("property-block");
+          propertyBlock.innerHTML = `
+                    <div class="property-info">
+                        <p><strong>Location:</strong> ${property.location}</p>
+                        <p><strong>Price:</strong> ${property.price}</p>
+                        <p><strong>Rooms:</strong> ${property.rooms}</p>
+                        <p><strong>Floors:</strong> ${property.floors}</p>
+                        <p><strong>State:</strong> ${property.state}</p>
+                    </div>
+                    <button class="delete-button" data-index="${index}">Delete</button>
+                `;
+          propertyCardsContainer.appendChild(propertyBlock);
+        });
+
+        // Add event listener to delete buttons
+        var deleteButtons = document.querySelectorAll(".delete-button");
+        deleteButtons.forEach(function (button) {
+          button.addEventListener("click", function () {
+            var index = parseInt(button.dataset.index);
+            deleteProperty(index);
+            refreshPropertyCards();
+          });
+        });
+      }
+    </script>
+  </body>
+</html>
